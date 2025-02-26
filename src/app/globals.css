@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 body {
+    background-color: #EDF0F2;
+}
+
+.user-form {
     background-color: #fff;
 }
 

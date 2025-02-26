@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Illustration from "./components/login-illustration.svg";
+import Illustration from "../../../public/login-illustration.svg";
 
 export default function LoginForm() {
     return (
-        <div className="flex items-center justify-center h-screen ">
+        <div className="flex items-center justify-center h-screen user-form">
             <div className="flex w-[1300px] h-[6000px]overflow-hidden">
                 <div className="w-[30%] p-10 flex flex-col justify-center">
                     <h1 className="flex text-3xl font-bold text-center">Login</h1>
@@ -42,7 +42,7 @@ export default function LoginForm() {
                     <Image
                         src={Illustration}
                         alt="Ilustração de login"
-                        className="w-[85%] h-auto"
+                        className="w-[100%] h-auto"
                     />
                 </div>
             </div>
