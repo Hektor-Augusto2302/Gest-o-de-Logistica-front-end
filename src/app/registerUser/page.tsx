@@ -1,7 +1,10 @@
+import PrivateRoute from "@/components/auth/PrivateRoute";
 import RegisterUserForm from "@/components/RegisterUserForm/RegisterUserForm";
 
 export default function Register () {
     return (
-        <RegisterUserForm />
+        <PrivateRoute>
+            <RegisterUserForm />
+        </PrivateRoute>
     )
 }
