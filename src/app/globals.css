@@ -45,3 +45,7 @@ body {
     background-color: #203b96;
     transform: scale(0.98);
 }
+
+.navbar {
+    background-color: #fff;
+}

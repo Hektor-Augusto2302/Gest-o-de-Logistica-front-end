@@ -7,7 +7,7 @@ export default function Sidebar() {
         <aside className="bg-gray-800 text-white w-64 h-screen p-4">
             <ul>
                 <li className="mb-2">
-                    <Link href="/">🏠 Dashboard</Link>
+                    <Link href="/">Dashboard</Link>
                 </li>
             </ul>
         </aside>

@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
             {!hideLayout && <Sidebar />}
             <div className="flex-1">
                 {!hideLayout && <Navbar />}
-                <main className="p-4">{children}</main>
+                <main className="pt-20 px-4">{children}</main>
             </div>
         </div>
     );
