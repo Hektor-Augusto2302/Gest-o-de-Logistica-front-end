@@ -8,15 +8,18 @@ import { useAuth } from "@/hooks/useAuth";
 
 export default function RegisterForm() {
 
-    const { register } = useAuth();
+    const { register, message } = useAuth();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleRegister = async (e: any) => {
         e.preventDefault();
+
+        setIsSubmitting(true);
 
         const user = {
             name,
@@ -27,10 +30,9 @@ export default function RegisterForm() {
 
         await register(user);
 
-        setName('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
+        setTimeout(() => {
+            setIsSubmitting(false);
+        }, 3000);
     }
 
     return (
@@ -44,6 +46,13 @@ export default function RegisterForm() {
                     />
                 </div>
                 <div className="lg:w-[50%] p-6 md:p-10 flex flex-col justify-center rounded-lg">
+                    {message && 
+                    <div className={message.type === "error" ? "bg-red-50" : "bg-green-50"}>
+                        <p className={`text-center ${message.type === "error" ? "text-red-500" : "text-green-500"}`}>
+                            {message.text}
+                        </p>
+                    </div>
+                    }
                     <h1 className="text-3xl font-bold">Cadastre-se</h1>
                     <p className="text-gray-600 mt-2">
                         Crie sua conta para começar a usar a plataforma
@@ -94,7 +103,13 @@ export default function RegisterForm() {
                             />
                         </div>
                         <div className="flex justify-center mt-6">
-                            <input type="submit" className="w-full button-form" value="Cadastrar" />
+                            <button
+                                type="submit"
+                                className="w-full button-form"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? "Cadastrando..." : "Cadastrar"}
+                            </button>
                         </div>
                     </form>
                 </div>
