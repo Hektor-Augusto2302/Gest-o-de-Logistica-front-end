@@ -4,6 +4,7 @@
 
 body {
     background-color: #EDF0F2;
+    margin: 0;
 }
 
 .user-form {
@@ -48,4 +49,8 @@ body {
 
 .navbar {
     background-color: #fff;
+}
+
+.sidebar {
+    background-color: #101540;
 }
