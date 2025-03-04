@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <PublicRoute>
-        <h1>Hello World</h1>
+      <h1>Hello World</h1>
     </PublicRoute>
   );
 }
