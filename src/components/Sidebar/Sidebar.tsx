@@ -29,7 +29,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                     {isOpen && <span className="text-sm mt-3">Dashboard</span>}
                 </Link>
 
-                <Link href="/about" className="flex text-white flex-col items-center hover:text-gray-400 
+                <Link href="/registerAdmin" className="flex text-white flex-col items-center hover:text-gray-400 
                     transition no-underline"
                 >
                     <Image 
@@ -38,7 +38,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                         height={24}
                         alt="Imagem da dashboard"
                     />
-                    {isOpen && <span className="text-sm mt-3">Sobre</span>}
+                    {isOpen && <span className="text-sm mt-3">Registro de Admin</span>}
                 </Link>
 
                 <Link href="/contact" className="flex text-white flex-col items-center hover:text-gray-400 
