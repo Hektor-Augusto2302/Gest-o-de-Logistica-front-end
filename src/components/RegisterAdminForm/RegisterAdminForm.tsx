@@ -32,9 +32,11 @@ export default function RegisterFormAdmin() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen w-full user-form">
-            <div className="flex flex-col w-full max-w-md p-6 rounded-lg shadow-lg">
-                <h2 className="text-white text-center text-xl font-semibold mb-4">Cadastro de Administrador</h2>
+        <div className="flex items-center justify-center min-h-screen w-full px-4 user-form">
+            <div className="flex flex-col w-full max-w-sm sm:max-w-md p-4 sm:p-6 rounded-lg shadow-lg">
+                <h2 className="text-black text-center text-lg sm:text-xl font-semibold mb-4">
+                    Cadastro de Administrador
+                </h2>
                 <form onSubmit={handleRegister} className="w-full">
                     <div className="flex flex-col">
                         <label className="label-form">Nome</label>

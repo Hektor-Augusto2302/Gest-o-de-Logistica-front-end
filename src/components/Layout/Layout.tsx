@@ -17,18 +17,14 @@ export default function Layout({ children }: LayoutProps) {
 
     return (
         <div className="h-screen flex flex-col">
-            {/* Navbar fixa no topo */}
             {!hideLayout && (
                 <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
             )}
 
             <div className="flex flex-1">
-                {/* Sidebar fixa na esquerda */}
                 {!hideLayout && <Sidebar isOpen={isSidebarOpen} />}
-
-                {/* Main ocupando o restante da tela, sem margens desnecessárias */}
                 <main
-                    className={`flex-1 overflow-auto pt-10 px-3 mt-10 ${
+                    className={`flex-1 overflow-auto pt-20 px-10 mt-10 ${
                         !hideLayout ? (isSidebarOpen ? "ml-40" : "ml-16") : "ml-0"
                     }`}
                 >
