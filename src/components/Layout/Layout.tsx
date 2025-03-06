@@ -16,23 +16,25 @@ export default function Layout({ children }: LayoutProps) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     return (
-        <div className="flex flex-col">
+        <div className="h-screen flex flex-col">
+            {/* Navbar fixa no topo */}
+            {!hideLayout && (
+                <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+            )}
 
-        {!hideLayout && <Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />}
+            <div className="flex flex-1">
+                {/* Sidebar fixa na esquerda */}
+                {!hideLayout && <Sidebar isOpen={isSidebarOpen} />}
 
-        <div className="flex">
-            {!hideLayout && <Sidebar isOpen={isSidebarOpen} />}
-
-            <main
-            className={`flex-1 transition-all duration-300 ${
-                    !hideLayout
-                    ? `pt-20 px-20 ${isSidebarOpen ? "ml-40" : "ml-16"}`
-                    : "ml-0"
-                }`}
-            >
-                {children}
-            </main>
-        </div>
+                {/* Main ocupando o restante da tela, sem margens desnecessárias */}
+                <main
+                    className={`flex-1 overflow-auto pt-10 px-3 mt-10 ${
+                        !hideLayout ? (isSidebarOpen ? "ml-40" : "ml-16") : "ml-0"
+                    }`}
+                >
+                    {children}
+                </main>
+            </div>
         </div>
     );
 }
