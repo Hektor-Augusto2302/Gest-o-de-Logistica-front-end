@@ -32,16 +32,17 @@ export default function RegisterFormAdmin() {
     };
 
     return (
-        <div className="flex items-center justify-center h-screen px-4 user-form">
-            <div className="flex flex-col lg:flex-row w-full max-w-[1300px] overflow-hidden">
-                <form onSubmit={handleRegister} className="mt-6">
+        <div className="flex items-center justify-center min-h-screen w-full user-form">
+            <div className="flex flex-col w-full max-w-md p-6 rounded-lg shadow-lg">
+                <h2 className="text-white text-center text-xl font-semibold mb-4">Cadastro de Administrador</h2>
+                <form onSubmit={handleRegister} className="w-full">
                     <div className="flex flex-col">
                         <label className="label-form">Nome</label>
                         <input
                             type="text"
                             name="name"
                             className="input-form"
-                            value={name || ""}
+                            value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
                         />
@@ -52,7 +53,7 @@ export default function RegisterFormAdmin() {
                             type="email"
                             name="email"
                             className="input-form"
-                            value={email || ""}
+                            value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
@@ -63,7 +64,7 @@ export default function RegisterFormAdmin() {
                             type="password"
                             name="password"
                             className="input-form"
-                            value={password || ""}
+                            value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
@@ -74,7 +75,7 @@ export default function RegisterFormAdmin() {
                             type="password"
                             name="confirmPassword"
                             className="input-form"
-                            value={confirmPassword || ""}
+                            value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
